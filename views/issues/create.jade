@@ -20,26 +20,25 @@ block content
                     type='text'
                     placeholder='Title'
                     required=''
-                    name='issue-title'
+                    name='title'
                   )#issue-title.form-control
               div.form-group
                 label(for='issue-body').control-label.col-sm-2 Body
                 div.col-sm-10
                   textarea(
-                    name='issue-body'
-                    rows='4'
+                    name='body'
+                    rows='5'
                     placeholder='Leave a comment'
                   )#issue-body.form-control
               div.form-group
                 label(for='issue-labels').control-label.col-sm-2
                 div.controls.col-sm-10
                   select(
-                    name='issue-labels'
+                    name='labels'
                     multiple=''
                   )#issue-labels.form-control
-                    - var labels = [ { title: 'core' }, { title: 'bug' }, { title: 'workflow' } ]
                     each label in labels
-                      option= label.title
+                      option= label.name
                   p.help-block
                   :markdown
                     Hold the `ctrl key` to select more than one label.
