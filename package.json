@@ -4,6 +4,7 @@
   "description": "Tool for allowing anonymous issue creation for a repo on GitHub.",
   "main": "app.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,16 @@
   "bugs": {
     "url": "https://github.com/DynamoGymnastics/tool-management-issues/issues"
   },
-  "homepage": "https://github.com/DynamoGymnastics/tool-management-issues#readme"
+  "homepage": "https://github.com/DynamoGymnastics/tool-management-issues#readme",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "markdown": "^0.5.0",
+    "markdown-it": "^5.1.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
 }
