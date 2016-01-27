@@ -6,4 +6,23 @@ block content
       div.panel-heading
         h3 Issues Index Page
       div.panel-body
-        p Form for issues goes here
+        table.table.table-striped.table-bordered.table-condensed
+          thead
+            tr
+              th #
+              th title
+              th user
+              th labels
+              th state
+              th body
+          tbody
+            each issue in issues
+              tr(class= (issue.state === 'open') ? 'success' : 'danger')
+                td= issue.number
+                td= issue.title
+                td= issue.user.login
+                each label in issue.labels
+                  td= ' | ' + label.name
+                td= issue.state
+                - var markdown = require('markdown').markdown;
+                td!= markdown.toHTML(issue.body)
