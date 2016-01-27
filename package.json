@@ -1,0 +1,22 @@
+{
+  "name": "dynamo-issues-management",
+  "version": "0.0.1",
+  "description": "Tool for allowing anonymous issue creation for a repo on GitHub.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DynamoGymnastics/tool-management-issues.git"
+  },
+  "keywords": [
+    "tool"
+  ],
+  "author": "Michael Perrotte <mike@mikecorp.ca>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DynamoGymnastics/tool-management-issues/issues"
+  },
+  "homepage": "https://github.com/DynamoGymnastics/tool-management-issues#readme"
+}
