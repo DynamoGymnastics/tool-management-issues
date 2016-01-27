@@ -1,0 +1,37 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  div.container
+    div.navbar-header
+      button(
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbar'
+        aria-expanded='false'
+        aria-controls='navbar'
+      ).navbar-toggle.collapsed
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a(href='/').navbar-brand Dynamo Tools
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(class=(menu === 'index') ? 'active': '')
+          a(href='/') Home
+        li(class=(menu === 'issues') ? 'dropdown active': 'dropdown')
+          a(
+            href='#'
+            data-toggle='dropdown'
+            role='button'
+            aria-haspopup='true'
+            aria-expanded='false'
+          ).dropdown-toggle Issues
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href='/issues') List
+            li
+              a(href='/issues/create') Create
+            li(role='separator').divider
+            li.dropdown-header Information
+            li
+              a(href='#') Help

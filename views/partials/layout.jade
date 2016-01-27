@@ -1,0 +1,13 @@
+doctype html
+html
+  include ./header.jade
+
+  include ./navigation.jade
+
+  body
+    block content
+
+  include ./footer.jade
+
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+  script(src='/js/bootstrap.min.js')

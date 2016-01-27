@@ -1,0 +1,51 @@
+extends ../partials/layout.jade
+
+block content
+  div.content.col-md-4
+    div.panel.panel-default
+      div.panel-heading
+        h3 Issues Index Page
+      div.panel-body
+        form(
+          action='/issues/create'
+          method='post'
+        ).form-horizontal
+          fieldset
+            legend Create Issue / Todo
+            div.col-xs-12
+              div.form-group
+                label(for='issue-title').control-label.col-sm-2 Title
+                div.col-sm-10
+                  input(
+                    type='text'
+                    placeholder='Title'
+                    required=''
+                    name='issue-title'
+                  )#issue-title.form-control
+              div.form-group
+                label(for='issue-body').control-label.col-sm-2 Body
+                div.col-sm-10
+                  textarea(
+                    name='issue-body'
+                    rows='4'
+                    placeholder='Leave a comment'
+                  )#issue-body.form-control
+              div.form-group
+                label(for='issue-labels').control-label.col-sm-2
+                div.controls.col-sm-10
+                  select(
+                    name='issue-labels'
+                    multiple=''
+                  )#issue-labels.form-control
+                    - var labels = [ { title: 'core' }, { title: 'bug' }, { title: 'workflow' } ]
+                    each label in labels
+                      option= label.title
+                  p.help-block
+                  :markdown
+                    Hold the `ctrl key` to select more than one label.
+              div.form-group
+                label(for='issue-button').control-label.col-sm-2
+                div.text-right.col-sm-10
+                  button(
+                    type='submit'
+                  )#issue-button.btn.btn-primary Submit
