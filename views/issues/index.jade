@@ -21,8 +21,10 @@ block content
                 td= issue.number
                 td= issue.title
                 td= issue.user.login
-                each label in issue.labels
-                  td= ' | ' + label.name
+                td
+                  each label in issue.labels
+                    code= (label.name) ? label.name : 'n/a'
+                    br
                 td= issue.state
                 - var markdown = require('markdown').markdown;
                 td!= markdown.toHTML(issue.body)
