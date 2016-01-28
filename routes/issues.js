@@ -30,10 +30,6 @@ router.get('/', function(req, res, next) {
           }
           each_cb(null);
         }, (err) => {
-          model.issues.forEach((issue, index) => {
-            console.log('>>', 'TESTING', 'issue#'+index, issue);
-          });
-
           res.render('issues', model);
         }
       );
