@@ -2,8 +2,9 @@
 const express = require('express');
 const Config = require('../libs/Config');
 const router = express.Router();
+const async = require('async');
 
-/* GET users listing. */
+// INFO: GET list of issues
 router.get('/', function(req, res, next) {
 
   // TODO: check session for error
@@ -15,16 +16,32 @@ router.get('/', function(req, res, next) {
     };
     model.menu = 'issues';
     if (err) {
-      model.issues = [{}];
-      console.log('err:', err);
+      console.log('ERROR:', err);
+      // TODO: build an {issues} object to attach to model
+      res.render('issues', model);
     } else {
       model.issues = issues;
+      async.each(model.issues, (issue, each_cb) => {
+          if (issue.labels.length === 0) {
+
+            // INFO: there are no labels to display
+            // INFO: push an empty object into array
+            issue.labels.push({});
+          }
+          each_cb(null);
+        }, (err) => {
+          model.issues.forEach((issue, index) => {
+            console.log('>>', 'TESTING', 'issue#'+index, issue);
+          });
+
+          res.render('issues', model);
+        }
+      );
     }
-    res.render('issues', model);
   });
-  // res.render('issues', { menu: 'issues' });
 });
 
+// INFO: GET form create page
 router.get('/create', function(req, res, next) {
   let model = {
     menu: null,
