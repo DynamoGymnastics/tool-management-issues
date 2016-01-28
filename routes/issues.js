@@ -58,6 +58,7 @@ router.get('/create', function(req, res, next) {
   });
 });
 
+// INFO: POST create issue
 router.post('/create', function(req, res, next) {
   let issue = req.body;
   console.log(issue);
@@ -67,8 +68,8 @@ router.post('/create', function(req, res, next) {
     if (err) {
 
       // TODO: tell the user we got an error
-      console.log('tell you user we got an error.');
-      req.params.error = 'CreateError';
+      console.log('Tell the user we got an error.');
+      res.redirect('/issues');
     } else {
 
       // TODO: display something nice for the user
