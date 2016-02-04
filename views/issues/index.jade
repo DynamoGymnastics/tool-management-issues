@@ -26,5 +26,4 @@ block content
                     code= (label.name) ? label.name : 'n/a'
                     br
                 td= issue.state
-                - var markdown = require('markdown').markdown;
-                td!= markdown.toHTML(issue.body)
+                td!= markdown.parse(issue.body)

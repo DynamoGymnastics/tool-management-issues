@@ -3,6 +3,8 @@ const express = require('express');
 const Config = require('../libs/Config');
 const router = express.Router();
 const async = require('async');
+const markdown = require('github-flavored-markdown');
+// const markdown = require('markdown-it')({ breaks: true });
 
 // INFO: GET list of issues
 router.get('/', function(req, res, next) {
@@ -12,7 +14,7 @@ router.get('/', function(req, res, next) {
     let model = {
       menu: null,
       issues: null,
-      require: require
+      markdown: markdown
     };
     model.menu = 'issues';
     if (err) {
