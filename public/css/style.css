@@ -20,6 +20,12 @@ a {
   color: #00B7FF;
 }
 
+body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd
+}
+
 /* Sticky footer styles */
 footer {
   position: absolute;
